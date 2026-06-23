@@ -1,0 +1,57 @@
+{% extends 'courses/base.html' %}
+
+{% block content %}
+   <!-- it was before the use of forms() -->
+<!-- <h2>Edit Course</h2>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <p>
+        Title:
+        <input
+            type="text"
+            name="title"
+            value="{{ course.title }}"
+        >
+    </p>
+
+    <p>
+        Description:
+        <textarea name="description">{{ course.description }}</textarea>
+    </p>
+
+    <p>
+        Price:
+        <input
+            type="number"
+            name="price"
+            value="{{ course.price }}"
+        >
+    </p>
+
+    <button type="submit">
+        Save Changes
+    </button>
+
+</form> -->
+
+<h2>Edit Course</h2>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <!-- class="btn btn-primary" it means primary blue color button 
+     with some padding and border radius. It is a bootstrap class that is used to style the button. 
+     The btn class is used to style the button with some padding and border radius. The btn-primary class is used to style the button with primary color. The primary color is defined in the bootstrap css file.
+      The primary color is usually blue, but it can be changed in the bootstrap css file. The btn-primary class is used to style the button with primary color. The primary color is defined in the bootstrap css file. The primary color is usually blue, but it can be changed in the bootstrap css file. -->
+    <button type="submit"  class="btn btn-primary"> 
+        Update Course
+    </button>
+
+</form>
+
+{% endblock %}

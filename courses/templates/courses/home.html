@@ -1,0 +1,25 @@
+{% extends 'courses/base.html' %}
+
+{% block content %}
+
+<h2>All Courses</h2>
+
+{% for course in courses %}
+
+<div>
+    <h3>
+        <a href="{% url 'course_detail' course.id %}">
+            {{ course.title }}
+        </a>
+    </h3>
+
+    <p>{{ course.description }}</p>
+
+    <p>Price: ₹{{ course.price }}</p>
+</div>
+
+<hr>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'courses/base.html' %}
+
+{% block content %}
+
+<h2>Add Course</h2>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+     {{ form.as_p }}  <!-- django form.as_p is used to render the form fields as paragraphs. It will automatically generate the appropriate HTML for each field in the form, including labels and input elements. -->
+
+    <button type="submit" class="btn btn-primary "><!-- using bootstrap class btn btn-primary to style the button with primary color and some padding and border radius -->
+        Create Course
+    </button>
+
+</form>
+
+{% endblock %}
